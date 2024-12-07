@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #2b2b2b, #4b4b4b);
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
             color: #f0f0f0;
             display: flex;
             justify-content: center;
@@ -20,10 +20,10 @@
         }
 
         .container {
-            background: #3b3b3b;
+            background: #262626;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
             text-align: center;
             z-index: 10;
         }
@@ -42,9 +42,9 @@
             margin: 10px;
             width: 90%;
             max-width: 300px;
-            border: 1px solid #555;
+            border: 1px solid #444;
             border-radius: 5px;
-            background: #4b4b4b;
+            background: #333;
             color: #fff;
         }
 
@@ -65,51 +65,78 @@
         .output {
             margin-top: 20px;
             padding: 10px;
-            border-top: 1px solid #555;
+            border-top: 1px solid #444;
             color: #bfbfbf;
         }
 
         /* Background shapes */
         .shape {
             position: absolute;
-            background: rgba(0, 123, 255, 0.2);
             filter: blur(15px);
-            border-radius: 50%;
             z-index: 1;
+            opacity: 0.3;
         }
 
         .shape.circle {
-            width: 250px;
-            height: 250px;
-            top: 20%;
-            left: 10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 123, 255, 0.2);
+            border-radius: 50%;
         }
 
         .shape.square {
-            width: 200px;
-            height: 200px;
-            top: 65%;
-            left: 75%;
-            border-radius: 20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 123, 255, 0.2);
         }
 
         .shape.triangle {
             width: 0;
             height: 0;
-            border-left: 100px solid transparent;
-            border-right: 100px solid transparent;
-            border-bottom: 170px solid rgba(0, 123, 255, 0.2);
+            border-left: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 120px solid rgba(0, 123, 255, 0.2);
+        }
+
+        .shape.circle.small {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Random positions */
+        .shape-1 {
+            top: 10%;
+            left: 5%;
+        }
+
+        .shape-2 {
+            top: 70%;
+            left: 15%;
+        }
+
+        .shape-3 {
             top: 50%;
+            left: 60%;
+        }
+
+        .shape-4 {
+            top: 30%;
+            left: 80%;
+        }
+
+        .shape-5 {
+            top: 80%;
             left: 50%;
-            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
     <!-- Background shapes -->
-    <div class="shape circle"></div>
-    <div class="shape square"></div>
-    <div class="shape triangle"></div>
+    <div class="shape circle shape-1"></div>
+    <div class="shape square shape-2"></div>
+    <div class="shape triangle shape-3"></div>
+    <div class="shape circle small shape-4"></div>
+    <div class="shape square shape-5"></div>
 
     <!-- Content container -->
     <div class="container">
@@ -118,6 +145,7 @@
         <input type="number" id="inputCapacity" placeholder="Enter capacity (mAh) at 3.7V">
         <input type="number" id="outputVoltage" placeholder="Enter output voltage (V)">
         <input type="number" id="efficiency" placeholder="Enter efficiency (%)" value="90">
+        <p style="margin-top: 10px; font-size: 0.9em; color: #aaa;">Created by <strong>dedmach5</strong></p>
         <button onclick="calculate()">Calculate</button>
         <div class="output" id="result"></div>
     </div>
